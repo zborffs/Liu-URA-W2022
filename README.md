@@ -1,4 +1,4 @@
-## status
+## 02/22/2022  Status
 - we have a nonlinear system
 - we linearized the system about 'n' (where n = 2 in the runner) equilibrium points
     - so now we have 2 linear systems
@@ -10,6 +10,10 @@
     gains, but interpolate gains between the top and bottom regions for smoother transition)
     - one could easily design more complex controllers as well
 - now we have a closed-loop system which we can feed reference signals to
+
+----------------------
+
+## 03/01/2022  Status
 - next, we must design a system to generate reference waypoints, which, if moved to, will
 not violate temporal logic specs
 - circling back to the feedback controller in the closed-loop system, we must design the 
@@ -26,7 +30,7 @@ zone
 - next include a specification that we won't go above a certain input torque
 - can we demonstrate a priori that we won't meet a spec even if we demand it? (like input torque spec?)
 
-
+-----------------
 ## longer term goal:
 - for each variable we linearize about the main points (at least 2 points: one stable, one unstable), 
 - there are N linearization combinations (2x2x2x2x....=N)

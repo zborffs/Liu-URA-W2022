@@ -16,9 +16,9 @@ pend = Pendulum()  # object containing system parameters and member functions fo
 # initial_conditions = np.random.rand(pend.dim_n)  # random position
 # initial_conditions = (np.pi / 2 - 0.5) * np.ones(pend.dim_n)  # upper-right position (nearly nominally stable)
 # initial_conditions = (3 * np.pi / 2 + 0.5) * np.ones(pend.dim_n)  # upper-left position (nearly nominally stable)
-# initial_conditions = np.pi * np.ones(pend.dim_n)  # down position
+initial_conditions = np.pi * np.ones(pend.dim_n)  # down position
 # initial_conditions = np.array([3 * np.pi / 4, -4.0])  # bottom-right position
-initial_conditions = np.array([5 * np.pi / 4, 0.0])  # bottom-left position
+# initial_conditions = np.array([5 * np.pi / 4, 0.0])  # bottom-left position
 goal = np.zeros(pend.dim_n)  # down position
 pend.integrate(initial_conditions, goal, t_interval)  # member function for performing the numerical simulation and storing solution to members
 

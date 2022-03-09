@@ -47,7 +47,9 @@ Dupp_ctr=[model.addLConstr(Dti[t,j,i]<=bounds[j,s[i]]*Mu[t,i],name='Dupp_{}_{}_{
                                 for i in range(ns) for j in range(n) for t in range(nt)]
 
 
-#Discrete System
+# Discrete System
+
+# <NEED>
 
 dyn_constr = {(j, t): model.addLConstr(Xt[t+1,j]==gp.quicksum(gp.quicksum([gp.quicksum(A[s[i],j,k]*Xti[t,k,i] for k in range(n)) \
                         ,B[s[i],j,0]*Uti[t,i],Mu[t,i]*C[s[i],j,0],Dti[t,j,i]]) for i in range(ns)),name='dyn_{}_{}'.format(j,t)) for j in range(n) for t in range(nt)}
@@ -58,6 +60,8 @@ dyn_constr = {(j, t): model.addLConstr(Xt[t+1,j]==gp.quicksum(gp.quicksum([gp.qu
                                 for t in range(nt)]
 [model.addLConstr(gp.quicksum(Mu[t,i] for i in range(ns)) == 1,name='Mu_{}'.format(t))\
                                 for t in range(nt)]
+
+# </NEED>
 # [model.addLConstr(Mu[0,1]==1)]
 # [model.addLConstr(Mu[1,4]==1)]
 #Control Rule:
