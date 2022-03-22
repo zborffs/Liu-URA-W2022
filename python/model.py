@@ -1,6 +1,5 @@
 import numpy as np
 from numpy import pi
-import utils
 from functools import partial
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
